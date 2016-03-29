@@ -1,0 +1,76 @@
+{
+  "name": "class-quiz-server",
+  "version": "1.0.0",
+  "description": "CS 597",
+  "repository": "http://github.com/ryanthompson0123/class-quiz.git",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js > class-quiz-server.log 2>&1 &",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
+    "test:watch": "npm run test -- --watch",
+    "lint-all": "eslint '**/*.js' '**/*.jsx' "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "6.5.1",
+    "babel-eslint": "^4.1.8",
+    "babel-loader": "6.2.2",
+    "babel-plugin-extensible-destructuring": "^3.0.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-root-import": "^3.1.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.5.3",
+    "eslint": "^1.10.3",
+    "exports-loader": "^0.6.3",
+    "extensible-polyfill": "^1.0.1",
+    "imports-loader": "^0.6.5",
+    "mocha": "^2.4.5",
+    "typescript": "^1.9.0-dev.20160209"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1"
+    ],
+    "env": {
+      "development": {
+        "plugins": [
+          "transform-decorators-legacy",
+          [
+            "extensible-destructuring",
+            {
+              "mode": "optout"
+            }
+          ],
+          "babel-root-import"
+        ]
+      },
+      "production": {
+        "plugins": [
+          "transform-decorators-legacy",
+          [
+            "extensible-destructuring",
+            {
+              "mode": "optout"
+            }
+          ],
+          "babel-root-import"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "autobind-decorator": "^1.3.3",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "classnames": "^2.2.3",
+    "immutable": "^3.7.6",
+    "lodash": "^4.0.0",
+    "moment": "^2.11.2",
+    "redux": "^3.2.0",
+    "socket.io": "1.4.5"
+  }
+}

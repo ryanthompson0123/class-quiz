@@ -1,0 +1,13 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=lf
+
+*.json text
+*.js text
+*.jsx text
+
+#shell scripts can have issues if they use crlf
+*.sh text eol=lf
+
+#prevent images from being modified as if they were text
+*.png binary
+*.jpg binary

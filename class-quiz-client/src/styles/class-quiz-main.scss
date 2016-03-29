@@ -1,0 +1,30 @@
+body {
+    font-family: "Roboto", Verdana, sans-serif;
+}
+
+.test-enter {
+  opacity: 0.01;
+}
+
+.test-enter.test-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.test-leave {
+  opacity: 1;
+}
+
+.test-leave.test-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.test-appear {
+  opacity: 0.01;
+}
+
+.test-appear.test-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}

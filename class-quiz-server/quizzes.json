@@ -1,0 +1,157 @@
+[
+  {
+    "title": "My First Quiz",
+    "questions": [
+      {
+        "text": "What is the airspeed velocity of an unladen swallow?",
+        "possibleAnswers": [
+          {
+            "text": "I don't know that."
+          },
+          {
+            "text": "42"
+          },
+          {
+            "text": "African or European?",
+            "isCorrect": true
+          },
+          {
+            "text": "Blue"
+          }
+        ]
+      },
+      {
+        "text": "What is your favorite color?",
+        "possibleAnswers": [
+          {
+            "text": "Yellow"
+          },
+          {
+            "text": "Red"
+          },
+          {
+            "text": "Green"
+          },
+          {
+            "text": "Blue",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Star Trek Trivia",
+    "questions": [
+      {
+        "text": "What is the registry number of the USS Voyager?",
+        "possibleAnswers": [
+          {
+            "text": "NCC-1701",
+            "isCorrect": false
+          },
+          {
+            "text": "NCC-74656",
+            "isCorrect": true
+          },
+          {
+            "text": "NX-74205",
+            "isCorrect": false
+          },
+          {
+            "text": "NCC-71201",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "What is William Riker's middle name?",
+        "possibleAnswers": [
+          {
+            "text": "Tiberius",
+            "isCorrect": false
+          },
+          {
+            "text": "Thomas",
+            "isCorrect": true
+          },
+          {
+            "text": "Timothy",
+            "isCorrect": false
+          },
+          {
+            "text": "Titus",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "What was the original designation of the liberated Borg, Hugh?",
+        "possibleAnswers": [
+          {
+            "text": "Three of Five",
+            "isCorrect": true
+          },
+          {
+            "text": "Two of Six",
+            "isCorrect": false
+          },
+          {
+            "text": "Seven of Nine",
+            "isCorrect": false
+          },
+          {
+            "text": "Three of Four",
+            "isCorrect": false
+          },
+          {
+            "text": "Nine of Twelve",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "What starship class was the Enterprise-C?",
+        "possibleAnswers": [
+          {
+            "text": "Galaxy",
+            "isCorrect": false
+          },
+          {
+            "text": "Ambassador",
+            "isCorrect": true
+          },
+          {
+            "text": "Sovereign",
+            "isCorrect": false
+          },
+          {
+            "text": "Constitution",
+            "isCorrect": false
+          },
+          {
+            "text": "Excelsior",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "My new question",
+        "possibleAnswers": [
+          {
+            "text": "An answer",
+            "isCorrect": false
+          },
+          {
+            "text": "Another answer",
+            "isCorrect": true
+          },
+          {
+            "text": "A third answer",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  }
+]
