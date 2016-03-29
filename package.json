@@ -6,14 +6,14 @@
   "main": "",
   "scripts": {
     "install": "npm run install-globals && npm run install-server && npm run install-client && npm run install-proctor",
-    "install-globals": "npm install -g babel-node webpack webpack-dev-server",
+    "install-globals": "npm install -g babel-cli webpack webpack-dev-server",
     "install-server": "cd class-quiz-server && npm install",
-    "install-client": "cd class-quiz && npm install",
+    "install-client": "cd class-quiz-client && npm install",
     "install-proctor": "cd class-quiz-proctor && npm install",
     "start": "npm run start-server && npm run start-proctor && npm run start-client",
     "start-server": "cd class-quiz-server && npm start",
     "start-proctor": "cd class-quiz-proctor && npm start",
-    "start-client": "cd class-quiz && npm start",
+    "start-client": "cd class-quiz-client && npm start",
     "stop": "killall node"
   },
   "keywords": [],
