@@ -46,3 +46,17 @@ After running npm start, three services will be spawned in the background.
 * The proctor can create, edit, and delete quizzes, as well as start and run quizzes.
 
 * Clients can hit port 8070 on their mobile devices to enter their names and join the quiz.
+
+* Quizzes are 'grand-prix' style events that display participant answers and response times. Participants earn points based on their response time and correct answers, and are ranked at the end of the quiz.
+
+## Remaining Items
+
+* Several UI tweaks and improvements as suggested in class.
+
+* In-quiz charts need to be implemented on the stats screen and results screen.
+
+* Functionality needs to be implemented for creating a new quiz.
+
+* Clients that lose connection (network drop or device going to sleep) can't reconnect.
+
+* Need to add timers before starting the quiz and between questions.
