@@ -76,7 +76,6 @@ class QuestionEditor extends Component {
     render() {
         let { xs, question, index, editAnswer, deleteAnswer } = this.props;
         let { text, possibleAnswers } = question;
-   
 
         const action = <FlatButton label="Ok" secondary={true}  keyboardFocused={true} onClick={this.handleClose}/>;
 
@@ -117,14 +116,14 @@ class QuestionEditor extends Component {
                 })}
                 <Row middle='xs'>
                     <Col xs={1} />
-                    <Col xs={8}>
+                    <Col xs={9}>
                         <TextField
                             floatingLabelText='Enter answer here'
                             onChange={this.handleNewAnswerTextChange}
                             value={this.state.newQuestionText}
                             style={{ width: '100%' }} />
                     </Col>
-                    <Col xs={3}>
+                    <Col xs={1}>
                         <IconButton tooltip='Add' onClick={this.handleAddClicked} style={{marginTop:'20px'}}>
                             <AvAddToQueue className='material-icons'
                                 add
