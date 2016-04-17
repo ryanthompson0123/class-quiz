@@ -1,6 +1,6 @@
 import * as ActionTypes from '../actions/actionCreators';
 import { Map, fromJS } from 'immutable';
-import { addQuestion, deleteQuestion, setQuestionText, setAnswer, deleteAnswer, addAnswer, setQuizName } from '../editCore';
+import { addQuiz, addQuestion, deleteQuestion, setQuestionText, setAnswer, deleteAnswer, addAnswer, setQuizName } from '../editCore';
 
 export default function rootReducer(state = Map(), action) {
     switch (action.type) {
@@ -9,6 +9,8 @@ export default function rootReducer(state = Map(), action) {
             return fromJS(action.state);
         case ActionTypes.START:
             return state;
+        case ActionTypes.ADD_QUIZ:
+            return addQuiz(state,action.title);
         case ActionTypes.EDIT_QUIZ:
             return state
                 .set('editingQuiz', true)

@@ -3,6 +3,8 @@ import { loadQuizzes, saveQuiz, deleteQuiz, join, proctorJoin, leave, respond, s
 
 export default function reducer(state = INITIAL_STATE, action) {
     switch (action.type) {
+        // case 'ADD_QUIZ':
+        //     return addQuiz(state,action.newQuiz);
         case 'LOAD_QUIZZES':
             return loadQuizzes(state, action.quizzes);
         case 'UPDATE':

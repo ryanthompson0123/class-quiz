@@ -12,6 +12,17 @@ export const INITIAL_STATE = Map({
     players: Map()
 });
 
+// export function addQuiz(state,newQuiz){
+    
+//     const newState = state.update('quizzes',quizList=> {
+//         return quizList.push(newQuiz));
+//     }
+
+//      writeOutQuizzes(newState);
+
+//     return  newState;
+// }
+
 export function loadQuizzes(state, quizzes) {
     const iQuizzes = fromJS(quizzes);
     

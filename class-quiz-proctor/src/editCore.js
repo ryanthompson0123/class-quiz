@@ -1,8 +1,24 @@
 
 import { Map, List } from 'immutable';
 
+
+
+
+export function addQuiz(state,title){
+
+    const newQuiz = Map({
+        title:title,
+        questions:List()
+    });
+
+    return state.update('quizzes',quizList=>{
+        return quizList.push(newQuiz);
+    });
+}
+
 export function addQuestion(state) {
     const { editingQuizIndex } = state;
+    console.log("i am adding");
     
     const newQuestion = Map({
         text: '',
@@ -27,8 +43,9 @@ export function addQuestion(state) {
 }
 export function deleteQuestion(state, index) {
     const { editingQuizIndex } = state;
+    const newIndex = state.getIn(['quizzes',editingQuizIndex,'questions']).count()-2;
     
-    return state
+    return state.set('editingQuestionIndex',newIndex)
         .deleteIn([
             'quizzes', 
             editingQuizIndex, 

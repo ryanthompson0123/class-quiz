@@ -14,6 +14,7 @@ export const EDIT_ANSWER = 'EDIT_ANSWER';
 export const DELETE_ANSWER = 'DELETE_ANSWER';
 export const ADD_ANSWER = 'ADD_ANSWER';
 export const CHANGE_QUIZ_NAME = 'CHANGE_QUIZ_NAME';
+export const ADD_QUIZ = 'ADD_QUIZ';
 
 export function setState(state) {
     return {
@@ -34,6 +35,13 @@ export function startQuiz(quiz) {
         type: START,
         meta: { remote: true },
         quiz
+    };
+}
+
+export function addQuiz(name){
+    return {
+        type: ADD_QUIZ,
+        title:name
     };
 }
 
@@ -132,3 +140,7 @@ export function changeQuestionText(index, text) {
         text
     };
 }
+
+
+
+

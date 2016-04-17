@@ -6,6 +6,10 @@ import autobind from 'autobind-decorator';
 import Card from 'material-ui/lib/card/card';
 import CardTitle from 'material-ui/lib/card/card-title';
 import CardMedia from 'material-ui/lib/card/card-media';
+import { BarChart } from 'react-d3';
+import { Map, List, toJS,fromJS } from 'immutable';
+
+
 
 const cardStyle = {
     marginTop: '20px',
@@ -21,13 +25,55 @@ const iconStyle = {
     float: 'right'
 };
 
+
+
 class StatsContent extends Component {
+    @autobind
+    createBarChart(possibleAnswers){
+
+        var barChartData = [{
+        label:"Question Stats",
+        values:[]
+        }];
+
+        const {players} = this.props;
+
+        possibleAnswers.map((answer,index)=>{
+            const {text} = answer;
+            const entry = {x:text,y:0};
+            barChartData[0].values.push(entry);   
+        });
+
+
+        players.map((player,index)=>{
+       
+            const {selectedAnswer} = player;
+            
+            if(selectedAnswer){
+                const {id} = selectedAnswer;
+                barChartData[0].values[id].y +=1;
+            }
+
+        });
+
+        return   <BarChart
+                  data={barChartData}
+                  width={600}
+                  height={300}
+                  fill={'#3182bd'}
+                  yAxisLabel='How Many Selected'
+                  xAxisLabel='List of Answers' />
+
+    }
+
+
+
     render() {
         const { question, xs } = this.props;
         const { number, possibleAnswers } = question;
         const correctAnswer = possibleAnswers.find(answer => answer.get('isCorrect'));
         
-        const { text } = correctAnswer;
+        const { text ,id} = correctAnswer;
         
         return (
             <Col xs={xs}>
@@ -57,21 +103,11 @@ class StatsContent extends Component {
                         </div>
                     </Col>
                 </Row>
-                <Row middle='xs'>
-                    <Col xs={6}>
+                <Row center='xs'>
+                    <Col xs={10}>
                         <Card style={cardStyle}>
-                            <CardTitle title='Beautiful Chart 1' />
-                            <CardMedia>
-                                <img src='/images/bar.png' />
-                            </CardMedia>
-                        </Card>
-                    </Col>
-                    <Col xs={6}>
-                        <Card style={cardStyle}>
-                            <CardTitle title='Beautiful Chart 2' />
-                            <CardMedia>
-                                <img src='/images/pie.png' />
-                            </CardMedia>
+                            <CardTitle title='Question Statistics' />
+                               {this.createBarChart(possibleAnswers)}
                         </Card>
                     </Col>
                 </Row>

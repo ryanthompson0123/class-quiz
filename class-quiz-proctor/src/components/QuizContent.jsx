@@ -8,7 +8,7 @@ import ResultsContent from './ResultsContent';
 class QuizContent extends Component {
     
     render() {
-        const { quiz } = this.props; 
+        const { quiz,players } = this.props; 
         const { currentStep, currentQuestion, scores, title, askedQuestions } = quiz;
         const questionCount = askedQuestions.count();
         
@@ -21,7 +21,7 @@ class QuizContent extends Component {
             case 'answersStep':
                 return <QuizQuestion showAnswer question={currentQuestion} xs={9} />;
             case 'statsStep':
-                return <StatsContent question={currentQuestion} xs={9} />;
+                return <StatsContent question={currentQuestion} players={players} xs={9} />;
             case 'resultsStep':
                 return <ResultsContent scores={scores} xs={12} possibleAnswers={questionCount} />;
             default:

@@ -25,9 +25,6 @@ class QuizList extends Component {
         
     }
     
-    getNewQuizRow() {
-        
-    }
     
     getQuizzes() {
         if (!this.props) return;
@@ -41,11 +38,11 @@ class QuizList extends Component {
     render() {
         return (
             <Grid style={{width: '100%' }}>
-                <Row>
+                <Row center='xs'>
                     <Col xs={4}>
                         <div 
                             className='mui--text-display2'
-                            style={{marginLeft: '40px', marginTop: '100px'}}>
+                            style={{marginTop: '40px'}}>
                             My Quizzes
                         </div>
                     </Col>
@@ -54,7 +51,7 @@ class QuizList extends Component {
                     <Col xs={10}>
                         <div
                             className='mui--text-headline'
-                            style={{marginTop: '20px'}}>
+                            style={{marginTop: '80px'}}>
                             Select a quiz to launch it!
                         </div>
                     </Col>

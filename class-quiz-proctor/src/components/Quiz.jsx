@@ -22,6 +22,7 @@ class Quiz extends Component {
         return (
             <RaisedButton
                 label='Exit Quiz'
+                secondary={true}
                 onMouseUp={this.handleExitClicked} />
         );
     }
@@ -33,9 +34,10 @@ class Quiz extends Component {
         
         return (
             <Row end='xs'>
-                <Col xs={2}>
+                <Col xs={2} style={{marginRight:'50px'}}>
                     <RaisedButton
                         label={text}
+                        secondary={true}
                         onMouseUp={this.handleSkipClicked} />
                 </Col>
             </Row>
@@ -60,13 +62,13 @@ class Quiz extends Component {
         
         return (
             <Grid style={{width: '100%' }}>
-                <Row end='xs'>
+                <Row end='xs' style={{marginRight:'60px',marginTop:'10px'}}>
                     <Col xs={2}>
                         {this.getExitButton()}
                     </Col>
                 </Row>
-                <Row top='xs' style={{height: '90vh'}}>
-                    <QuizContent quiz={quiz} />
+                <Row top='xs' style={{height: '82vh'}}>
+                    <QuizContent quiz={quiz} {...this.props} />
                     {this.getPlayerList(currentStep, quiz)}
                 </Row>
                 {this.getSkipButton(currentStep)}

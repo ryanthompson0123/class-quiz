@@ -5,6 +5,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import QuizList from '../components/QuizList';
 import Quiz from '../components/Quiz';
 import QuizEditor from '../components/QuizEditor';
+import QuizAdder from '../components/QuizAdder';
 
 class ProctorContainer extends Component {
     getContainer() {
@@ -26,8 +27,13 @@ class ProctorContainer extends Component {
                     {...this.props} />
             );
         }
+
+        return  <div>
+                    <QuizList {...this.props} />
+                    <QuizAdder {...this.props}/>
+                </div>;
         
-        return <QuizList {...this.props} />;
+        
     }
 
     render() {

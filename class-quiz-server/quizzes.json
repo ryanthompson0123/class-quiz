@@ -1,46 +1,5 @@
 [
   {
-    "title": "My First Quiz",
-    "questions": [
-      {
-        "text": "What is the airspeed velocity of an unladen swallow?",
-        "possibleAnswers": [
-          {
-            "text": "I don't know that."
-          },
-          {
-            "text": "42"
-          },
-          {
-            "text": "African or European?",
-            "isCorrect": true
-          },
-          {
-            "text": "Blue"
-          }
-        ]
-      },
-      {
-        "text": "What is your favorite color?",
-        "possibleAnswers": [
-          {
-            "text": "Yellow"
-          },
-          {
-            "text": "Red"
-          },
-          {
-            "text": "Green"
-          },
-          {
-            "text": "Blue",
-            "isCorrect": true
-          }
-        ]
-      }
-    ]
-  },
-  {
     "title": "Star Trek Trivia",
     "questions": [
       {
@@ -134,21 +93,60 @@
             "isCorrect": false
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "title": "Movies Fact",
+    "questions": [
       {
-        "text": "My new question",
+        "text": "For which movie did Edward Norton win oscar?",
         "possibleAnswers": [
           {
-            "text": "An answer",
+            "text": "American History X",
             "isCorrect": false
           },
           {
-            "text": "Another answer",
+            "text": "Primal Fear",
+            "isCorrect": false
+          },
+          {
+            "text": "He has not won oscar yet",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "text": "When was pulp fiction released ?",
+        "possibleAnswers": [
+          {
+            "text": "1994",
             "isCorrect": true
           },
           {
-            "text": "A third answer",
+            "text": "2000",
+            "isCorrect": false
+          },
+          {
+            "text": "1990",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "Who directed Taxi Driver ?",
+        "possibleAnswers": [
+          {
+            "text": "steven spielberg",
+            "isCorrect": false
+          },
+          {
+            "text": "martin Scoresese",
             "isCorrect": true
+          },
+          {
+            "text": "Guy Richie",
+            "isCorrect": false
           }
         ]
       }

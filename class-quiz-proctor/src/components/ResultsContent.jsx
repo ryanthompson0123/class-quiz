@@ -11,6 +11,7 @@ import TableHeader from 'material-ui/lib/table/table-header';
 import TableRowColumn from 'material-ui/lib/table/table-row-column';
 import TableBody from 'material-ui/lib/table/table-body';
 import { Map } from 'immutable';
+import { BarChart } from 'react-d3';
 
 const cardStyle = {
     marginTop: '20px',
@@ -98,42 +99,111 @@ class ResultsContent extends Component {
             </Table>
        );   
     }
+
+
+
+    getOverallStatisticsBarChart(scores){
+
+        const totalScore = 400;
+
+        var barChartData = [{
+            label:"Quiz Stats",
+            values:[{x:"0-10",y:0},{x:"10-20",y:0},{x:"20-30",y:0},{x:"30-40",y:0},{x:"40-50",y:0},
+            {x:"50-60",y:0},{x:"60-70",y:0},{x:"70-80",y:0},{x:"80-90",y:0},{x:"90-100",y:0}]
+            }];
+
+        scores.map((scoreObj)=>{
+            const {score} = scoreObj;
+            const percentage = (score/400) *100;
+
+            switch(true){
+            case percentage>=0 && percentage <=10:
+                barChartData[0].values[0].y+=1;
+                break;
+            case percentage>10 && percentage <=20:
+                barChartData[0].values[1].y+=1;
+                break;
+            case percentage>20 && percentage <=30:
+                barChartData[0].values[2].y+=1;
+                break;
+            case percentage>30 && percentage <=40:
+                barChartData[0].values[3].y+=1;
+                break;
+            case percentage>40 && percentage <=50:
+                barChartData[0].values[4].y+=1;
+                break;
+            case percentage>50 && percentage <=60:
+                barChartData[0].values[5].y+=1;
+                break;
+            case percentage>60 && percentage <=70:
+                barChartData[0].values[6].y+=1;
+                break;
+            case percentage>70 && percentage <=80:
+                barChartData[0].values[7].y+=1;
+                break;
+            case percentage>80 && percentage <=90:
+                barChartData[0].values[8].y+=1;
+                break;
+            case percentage>90 && percentage <=100:
+                barChartData[0].values[9].y+=1;
+                break;
+            default:
+                break;
+            }
+            
+        })
+
+        return   <BarChart
+                  data={barChartData}
+                  width={600}
+                  height={300}
+                  fill={'#3182bd'}
+                  yAxisLabel='Number of Users'
+                  xAxisLabel='Scores in Percentage'/>;
+
+
+    }
     
     render() {
         let { scores, possibleAnswers, xs } = this.props;
         
         return (
             <Col xs={xs}>
-                <Row>
+                <Row center='xs'>
                     <Col xs={4}>
                         <div 
                             className='mui--text-display2'
-                            style={{marginLeft: '40px'}}>
+                            style={{marginLeft: '0px'}}>
                             Results
                         </div>
                     </Col>
                 </Row>
-                <Row middle='xs'>
-                    <Col xs={4}>
+                <Row start='xs'>
+                    <Col xs={6}>
                         <Card style={cardStyle}>
-                            <CardMedia>
-                                {this.getAveragesTable(scores, possibleAnswers)}
-                            </CardMedia>
+                           <CardTitle title='Quiz Statistics' />
+                              {this.getOverallStatisticsBarChart(scores)}
                         </Card>
                     </Col>
-                    <Col xs={4}>
-                        <Card style={cardStyle}>
-                            <CardMedia>
-                                <img src='/images/bar.png' />
-                            </CardMedia>
-                        </Card>
-                    </Col>
-                    <Col xs={4}>
-                        <Card style={cardStyle}>
-                            <CardMedia>
-                                {this.getStandingsTable(scores)}
-                            </CardMedia>
-                        </Card>
+                    <Col xs={6}>
+                        <Row>
+                            <Col xs={8}>
+                                <Card style={cardStyle}>
+                                    <CardMedia>
+                                        {this.getStandingsTable(scores)}
+                                     </CardMedia>
+                                </Card>
+                            </Col>
+                        </Row>
+                        <Row >
+                            <Col xs={8}>
+                                <Card style={cardStyle}>
+                                     <CardMedia>
+                                        {this.getAveragesTable(scores, possibleAnswers)}
+                                    </CardMedia>
+                                </Card>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Col>
