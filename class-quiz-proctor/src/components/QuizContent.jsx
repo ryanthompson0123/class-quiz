@@ -23,7 +23,7 @@ class QuizContent extends Component {
             case 'statsStep':
                 return <StatsContent question={currentQuestion} players={players} xs={9} />;
             case 'resultsStep':
-                return <ResultsContent scores={scores} xs={12} possibleAnswers={questionCount} />;
+                return <ResultsContent scores={scores} xs={12} questionsAsked={questionCount} />;
             default:
                 return <div />;
         }

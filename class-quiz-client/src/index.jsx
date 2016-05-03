@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 import Root from './containers/Root';
 import io from 'socket.io-client';
 import configureStore from './store/configureStore';
-import { setState } from './actions/actionCreators.js';
+import { setState } from './actions/actionCreators';
 import './styles/class-quiz-main.scss';
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);

@@ -53,8 +53,6 @@ class QuizEditor extends Component {
 
     }
 
-
-    
     @autobind
     handleDoneClicked() {
         let lastQuestionText,editingQuestionAnswers,numberOfAnswers;
@@ -173,7 +171,7 @@ class QuizEditor extends Component {
                                 <div
                                     className='mui--text-headline'
                                     style={{marginLeft:'30px',marginTop: '40px'}}>
-                                    Please click the add button on the left to add question
+                                    No questions have been added yet.
                                 </div>
                         </Row>
                     </Grid>

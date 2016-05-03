@@ -23,7 +23,16 @@ class QuestionEditor extends Component {
             alert:false,   
         };
     }
-
+    
+    componentDidMount() {
+        console.log('mounting');
+        
+        console.log(this.refs);
+        
+        console.log('focusing');
+        this.refs.questionText.focus();    
+    }
+    
     handleOpen = () =>{
         this.setState({alert: true});  
     };
@@ -89,6 +98,7 @@ class QuestionEditor extends Component {
                     </Col>
                     <Col xs={9}>
                         <TextField
+                            ref='questionText'
                             floatingLabelText='Enter your quiz question here'
                             multiLine={true}
                             value={text}
@@ -120,6 +130,7 @@ class QuestionEditor extends Component {
                         <TextField
                             floatingLabelText='Enter answer here'
                             onChange={this.handleNewAnswerTextChange}
+                            onEnterKeyDown={this.handleAddClicked}
                             value={this.state.newQuestionText}
                             style={{ width: '100%' }} />
                     </Col>

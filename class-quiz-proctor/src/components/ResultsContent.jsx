@@ -77,7 +77,7 @@ class ResultsContent extends Component {
             .update('correct', c => c / count);
     }
     
-    getAveragesTable(scores, possibleAnswers) {
+    getAveragesTable(scores, questionsAsked) {
         const { score, response, correct } = this.getAverages(scores);
        
         return (
@@ -93,7 +93,7 @@ class ResultsContent extends Component {
                     </TableRow>
                     <TableRow>
                         <TableRowColumn>Avg. Correct</TableRowColumn>
-                        <TableRowColumn>{Math.round(correct / possibleAnswers * 100)} %</TableRowColumn>
+                        <TableRowColumn>{Math.round(correct / questionsAsked * 100)} %</TableRowColumn>
                     </TableRow>
                 </TableBody>
             </Table>
@@ -102,10 +102,7 @@ class ResultsContent extends Component {
 
 
 
-    getOverallStatisticsBarChart(scores){
-
-        const totalScore = 400;
-
+    getOverallStatisticsBarChart(scores, questionsAsked) {
         var barChartData = [{
             label:"Quiz Stats",
             values:[{x:"0-10",y:0},{x:"10-20",y:0},{x:"20-30",y:0},{x:"30-40",y:0},{x:"40-50",y:0},
@@ -113,8 +110,8 @@ class ResultsContent extends Component {
             }];
 
         scores.map((scoreObj)=>{
-            const {score} = scoreObj;
-            const percentage = (score/400) *100;
+            const {correctAnswers} = scoreObj;
+            const percentage = (correctAnswers/questionsAsked) *100;
 
             switch(true){
             case percentage>=0 && percentage <=10:
@@ -165,7 +162,7 @@ class ResultsContent extends Component {
     }
     
     render() {
-        let { scores, possibleAnswers, xs } = this.props;
+        let { scores, questionsAsked, xs } = this.props;
         
         return (
             <Col xs={xs}>
@@ -182,7 +179,7 @@ class ResultsContent extends Component {
                     <Col xs={6}>
                         <Card style={cardStyle}>
                            <CardTitle title='Quiz Statistics' />
-                              {this.getOverallStatisticsBarChart(scores)}
+                              {this.getOverallStatisticsBarChart(scores, questionsAsked)}
                         </Card>
                     </Col>
                     <Col xs={6}>
@@ -199,7 +196,7 @@ class ResultsContent extends Component {
                             <Col xs={8}>
                                 <Card style={cardStyle}>
                                      <CardMedia>
-                                        {this.getAveragesTable(scores, possibleAnswers)}
+                                        {this.getAveragesTable(scores, questionsAsked)}
                                     </CardMedia>
                                 </Card>
                             </Col>
@@ -214,7 +211,7 @@ class ResultsContent extends Component {
 ResultsContent.propTypes = {
     scores: ImmutablePropTypes.contains(
     ),
-    possibleAnswers: PropTypes.number.isRequired,
+    questionsAsked: PropTypes.number.isRequired,
     xs: PropTypes.number.isRequired
 };
 

@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import patchDestructuring from 'extensible-polyfill';
 patchDestructuring('immutable');
 import makeStore from './src/store';

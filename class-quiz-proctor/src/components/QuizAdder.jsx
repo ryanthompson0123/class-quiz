@@ -22,14 +22,14 @@ class QuizAdder extends Component{
   	}
 
   
-  handleOpen =() =>{
-    this.setState({alert: true});
-  };
+	handleOpen =() =>{
+		this.setState({alert: true});
+	};
 
 
-  handleClose = () => {
-    this.setState({alert: false});
-  };
+	handleClose = () => {
+		this.setState({alert: false});
+	};
 
 
 
@@ -66,7 +66,8 @@ class QuizAdder extends Component{
 									<Col xs={8}>
 										<TextField id="quiz_title" 
 										floatingLabelText="Enter a short meaningful title here" 
-										style={{width:'60%',marginLeft:'320px'}} />
+										style={{width:'60%',marginLeft:'320px'}}
+										onEnterKeyDown={this.addQuiz} />
 									</Col>
 									<Col>
 									  	<IconButton tooltip='Add' onClick={this.addQuiz} style={{marginTop:'30px',marginLeft:'50px'}}>

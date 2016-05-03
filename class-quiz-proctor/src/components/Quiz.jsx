@@ -23,22 +23,27 @@ class Quiz extends Component {
             <RaisedButton
                 label='Exit Quiz'
                 secondary={true}
-                onMouseUp={this.handleExitClicked} />
+                onMouseUp={this.handleExitClicked}
+                style={{float: 'right'}} />
         );
     }
     
-    getSkipButton(currentStep) {
+    getBottomBar(currentStep) {
         if (currentStep == 'resultsStep') return;
         
         const text = currentStep == 'waiting' ? 'Start Quiz' : 'Skip';
         
         return (
-            <Row end='xs'>
-                <Col xs={2} style={{marginRight:'50px'}}>
+            <Row>
+                <Col xs={10}>
+                    <div> I'm a timer</div>
+                </Col>
+                <Col xs={2}>
                     <RaisedButton
                         label={text}
                         secondary={true}
-                        onMouseUp={this.handleSkipClicked} />
+                        onMouseUp={this.handleSkipClicked}
+                        style={{float: 'right'}} />
                 </Col>
             </Row>
         );
@@ -61,9 +66,9 @@ class Quiz extends Component {
         const { currentStep } = quiz;
         
         return (
-            <Grid style={{width: '100%' }}>
-                <Row end='xs' style={{marginRight:'60px',marginTop:'10px'}}>
-                    <Col xs={2}>
+            <Grid style={{width: '98vw'}}>
+                <Row style={{marginTop:'10px'}}>
+                    <Col xs={12}>
                         {this.getExitButton()}
                     </Col>
                 </Row>
@@ -71,7 +76,7 @@ class Quiz extends Component {
                     <QuizContent quiz={quiz} {...this.props} />
                     {this.getPlayerList(currentStep, quiz)}
                 </Row>
-                {this.getSkipButton(currentStep)}
+                {this.getBottomBar(currentStep)}
             </Grid>
         );
     }

@@ -43,6 +43,10 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
+            },
+            compresor: {
+                screw_ie8: true,
+                warnings: false
             }
         }),
         new webpack.optimize.DedupePlugin(),

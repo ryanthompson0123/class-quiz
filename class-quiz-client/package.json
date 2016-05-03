@@ -5,7 +5,7 @@
   "repository": "http://github.com/ryanthompson0123/class-quiz.git",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot > class-quiz-client.log 2>&1 &",
+    "start": "webpack-dev-server --progress > class-quiz-client.log 2>&1 &",
     "webpack": "webpack",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
     "test:watch": "npm run test -- --watch",
