@@ -1,7 +1,7 @@
 Class Quiz
 ==================
 
-Class Quiz is a group project for CS 597. Written in React-Redux, the project aims to get a multiplayer in-class quiz game up and running as quick as possible.
+Written in React-Redux, the project aims to get a multiplayer in-class quiz game up and running as quick as possible.
 
 ## Requirements
 
